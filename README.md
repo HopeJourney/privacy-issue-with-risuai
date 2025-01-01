@@ -8,8 +8,8 @@
   - 또한, 리스에서는 유저의 저장된 채팅 내용은 원할한 서비스 운영에 사용하고, 다른 유저에게 공유할 수 있음을 명시하고 있습니다. (Article 11.7)
 3. 우선 로컬 백업 기능에서만 확인한 것입니다. 아직 리스의 소스를 제대로 확인하지는 않아, 다른 부분에서 채팅 로깅이 진행될 지 모릅니다.
 4. 해결 방법 (node리스, 로컬리스)
-  1. 공식 깃헙에서 저장소를 내려 받습니다.
-  2. 'src/ts/drive/backuplocal.ts'에서 다음을 제거하거나 주석 처리합니다.
+  - 공식 깃헙에서 저장소를 내려 받습니다.
+  - 'src/ts/drive/backuplocal.ts'에서 다음을 제거하거나 주석 처리합니다.
      ```ts
       //check backup data is corrupted
       const corrupted = await fetch(hubURL + '/backupcheck', {
@@ -24,26 +24,26 @@
           return
       }
      ```
-  4 사용하는 환경이 node리스인 경우
+  - 사용하는 환경이 node리스인 경우
     - pnpm run build
     - pnpm run runserver
     - 순서대로 실행하면 됩니다.
 
-  5. 사용하는 환경이 로컬리스인 경우
+  - 사용하는 환경이 로컬리스인 경우
     - Node.js와 Rust를 설치했다고 가정합니다. 설치 방법은 인터넷에서 각자 검색해주세요.
     - 'corepack enable pnpm' // pnpm을 활성화합니다.
     - 'pnpm install'
     - 'pnpm run tauri build --target 타겟_플랫폼'
 
-    타겟 플랫폼은 아래를 참고해주세요.
+    - 타겟 플랫폼은 아래를 참고해주세요.
       - x86_64-pc-windows-msvc : x86_64 Windows
       - x86_64-apple-darwin : Intel Mac
       - aarch64-apple-darwin : ARM Mac
       
-      - 리눅스 사용하시는 분들은... 잘 모르겠습니다. 죄송합니다.
-      - 순서대로 실행하면 자동으로 빌드에 필요한 파일을 내려받고, 컴파일합니다.
-      - 빌드된 설치 파일은 '저장소폴더/src-tauri/target/타겟 플랫폼 이름/release/bundle'
-      에 저장되어 있습니다.
+    - 리눅스 사용하시는 분들은... 잘 모르겠습니다. 죄송합니다.
+    - 순서대로 실행하면 자동으로 빌드에 필요한 파일을 내려받고, 컴파일합니다.
+    - 빌드된 설치 파일은 '저장소폴더/src-tauri/target/타겟 플랫폼 이름/release/bundle'
+    에 저장되어 있습니다.
       
   ### 주의! 웹리스는 RisuAI에서 호스팅하므로, 해결책을 적용할 수 없습니다.
 
