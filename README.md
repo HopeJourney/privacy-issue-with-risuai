@@ -24,30 +24,27 @@
           return
       }
      ```
-  3. 저장소 폴더에서 터미널 혹은 명령 프롬프트를 열어 아래 명령어를 실행합니다.
-  <details>
-    <summary>사용하는 환경이 node리스인 경우</summary>
-    - 'pnpm run build'
-    - 'pnpm run runserver'
-    순서대로 실행하면 됩니다.
-  </details>
-  <details>
-    <summary>사용하는 환경이 로컬리스인 경우</summary>
-      ### Node.js를 설치했다고 가정합니다. 설치 방법은 인터넷에서 각자 검색해주세요.
-      - Rustup을 이용해 Rust를 설치합니다. 역시나 방법은 각자 인터넷에서 검색 부탁드립니다.
-      - 'corepack enable pnpm' // pnpm을 활성화합니다.
-      - 'pnpm install'
-      - 'pnpm run tauri build --target 타겟_플랫폼'
-        - 타겟 플랫폼은 아래를 참고해주세요.
-        - x86_64-pc-windows-msvc : x86_64 Windows
-        - x86_64-apple-darwin : Intel Mac
-        - aarch64-apple-darwin : ARM Mac
-        - 리눅스 사용하시는 분들은... 잘 모르겠습니다. 죄송합니다.
-      순서대로 실행하면 자동으로 빌드에 필요한 파일을 내려받고, 컴파일합니다.
+  4 사용하는 환경이 node리스인 경우
+    - pnpm run build
+    - pnpm run runserver
+    - 순서대로 실행하면 됩니다.
+
+  5. 사용하는 환경이 로컬리스인 경우
+    - Node.js와 Rust를 설치했다고 가정합니다. 설치 방법은 인터넷에서 각자 검색해주세요.
+    - 'corepack enable pnpm' // pnpm을 활성화합니다.
+    - 'pnpm install'
+    - 'pnpm run tauri build --target 타겟_플랫폼'
+
+    타겟 플랫폼은 아래를 참고해주세요.
+      - x86_64-pc-windows-msvc : x86_64 Windows
+      - x86_64-apple-darwin : Intel Mac
+      - aarch64-apple-darwin : ARM Mac
+      
+      - 리눅스 사용하시는 분들은... 잘 모르겠습니다. 죄송합니다.
+      - 순서대로 실행하면 자동으로 빌드에 필요한 파일을 내려받고, 컴파일합니다.
       - 빌드된 설치 파일은 '저장소폴더/src-tauri/target/타겟 플랫폼 이름/release/bundle'
       에 저장되어 있습니다.
-  </details>
-  
+      
   ### 주의! 웹리스는 RisuAI에서 호스팅하므로, 해결책을 적용할 수 없습니다.
 
 # 본문
